@@ -1,2 +1,1 @@
-print("hello 123")
-print("o12--")
+print("hello Sogang123")
