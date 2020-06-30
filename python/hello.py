@@ -1,3 +1,5 @@
-import torch
-x = torch.randn(3,5)
-print(x)
+import numpy as np
+a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
+b=a[:2,1:3]
+b[0,0]=103
+print(a)
