@@ -1,0 +1,5 @@
+print(divmod(10,4))
+t=(20,8)
+print(divmod(*t))
+q,r=divmod(*t)
+print(q,r)
