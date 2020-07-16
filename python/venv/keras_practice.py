@@ -1,37 +1,22 @@
-import tensorflow as tf
-from tensorflow import keras
-import pathlib
-
+import random
 import numpy as np
-import matplotlib.pyplot as plt
 import pandas as pd
-import seaborn as sns
+import matplotlib.pyplot as plt
+import warnings
 
-dataset_path = keras.utils.get_file("auto-mpg.data", "http://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/auto-mpg.data")
+try:
+    from sklearn.cluster import KMeans  # check installation of sklearn
+except:
+    print("Not installed scikit-learn.")
+    pass
 
-column_names='MPG Cylinders Displacement Horsepower Weight Acceleration Model_Year Origin'.split()
-raw_dataset=pd.read_csv(dataset_path, names=column_names, na_values='?', comment='\t',
-                        sep=" ", skipinitialspace=True)
+data=pd.read_csv("data.csv")
 
-dataset=raw_dataset.copy()
-dataset=dataset.dropna()
+plt.figure()
+plt.grid()
+plt.title("Sepal width and Sepal length")
+plt.xlabel("Sepal width (cm)")
+plt.ylabel("Sepal length (cm)")
+plt.plot(data["Sepal width"], data["Sepal length"], linestyle='none', marker='o', color='purple', alpha=0.5)
 
-origin=dataset.pop('Origin')
-
-train_dataset=dataset.sample(frac=0.8, random_state=0)
-test_dataset=dataset.drop(train_dataset.index)
-
-train_labels=train_dataset.pop('MPG')
-test_labels=test_dataset.pop('MPG')
-
-
-def norm(x): #normalization
-  return (x - train_stats['mean']) / train_stats['std']
-
-
-normed_train_data = norm(train_dataset)
-normed_test_data = norm(test_dataset)
-
-
-def build_model():
-    
+plt.show()
