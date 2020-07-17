@@ -10,13 +10,14 @@ except:
     print("Not installed scikit-learn.")
     pass
 
-data=pd.read_csv("data.csv")
+if __name__ == '__main__':
+    data=pd.read_csv("data.csv")
 
-plt.figure()
-plt.grid()
-plt.title("Sepal width and Sepal length")
-plt.xlabel("Sepal width (cm)")
-plt.ylabel("Sepal length (cm)")
-plt.plot(data["Sepal width"], data["Sepal length"], linestyle='none', marker='o', color='purple', alpha=0.5)
+    plt.figure()
+    plt.grid()
+    plt.title("Sepal width and Sepal length")
+    plt.xlabel("Sepal width (cm)")
+    plt.ylabel("Sepal length (cm)")
+    plt.plot(data["Sepal width"], data["Sepal length"], linestyle='none', marker='o', color='purple', alpha=0.5)
 
-plt.show()
+    plt.show()
