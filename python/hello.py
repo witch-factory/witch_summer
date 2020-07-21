@@ -1,2 +1,2 @@
-import webbrowser
-webbrowser.open("www.naver.com")
+a, b = map(int, input().split())
+print(a+b)
