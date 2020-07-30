@@ -1,2 +1,2 @@
-a, b = map(int, input().split())
-print(a+b)
+s="".join([str(i) for i in range(20000000)])
+print(s[int(input())])
