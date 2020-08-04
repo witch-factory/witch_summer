@@ -44,6 +44,6 @@ print(model.summary())
 model.compile(optimizer='adam', loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
 
-history=model.fit(train_images, train_labels, batch_size=64, epochs=20)
+history=model.fit(train_images, train_labels, batch_size=64, epochs=30)
 test_loss, test_acc = model.evaluate(test_images, test_labels, verbose=2)
-print("test accuracy :",test_acc)
+print("test_acc:",test_acc)
